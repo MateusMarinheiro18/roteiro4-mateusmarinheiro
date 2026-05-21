@@ -17,7 +17,7 @@
   ],
 
   "background": {
-    "scripts": ["privacy_monitor.js"],
+    "scripts": ["privacy_monitor_popup.js"],
     "persistent": true
   },
 

@@ -1,10 +1,7 @@
-Extensão validada em ambiente controlado
-
 # Privacy Monitor — Extensão Firefox
 
 Extensão WebExtension (Manifest V2) para o Firefox que detecta e exibe em tempo real os principais vetores de rastreamento e violação de privacidade presentes na navegação web.
 
-Desenvolvida como entrega do **Roteiro 3** da disciplina de Segurança — Prof. João Eduardo — Insper 2026.
 
 ---
 
@@ -94,7 +91,7 @@ A fórmula **logarítmica** garante retornos decrescentes: o 1º rastreador pena
 ```
 privacy-monitor/
 ├── manifest.json          # Manifest V2 — declaração da extensão
-├── privacy_monitor.js     # Background script principal (webRequest, cookies, score)
+├── privacy_monitor_popup.js     # Background script principal (webRequest, cookies, score)
 ├── content_script.js      # Injetado nas páginas (fingerprinting, storage, hijacking)
 ├── popup/
 │   ├── popup.html         # Interface do usuário
@@ -111,7 +108,7 @@ privacy-monitor/
 
 ## Arquitetura técnica
 
-### Background Script (`privacy_monitor.js`)
+### Background Script (`privacy_monitor_popup.js`)
 Utiliza a API `webRequest` (Manifest V2) para interceptar todas as requisições em tempo real, classificar domínios de 1ª e 3ª parte, analisar headers de resposta para detectar cookies e supercookies, e responder ao popup com os dados consolidados.
 
 ### Content Script (`content_script.js`)
